@@ -127,8 +127,6 @@ footer a {
 
 <div class="container">
 
-# Security Notes by Chris Binnie
-
 <ul class="notes">
 <li class="note-item">
 <a href="https://chrisbinnie.github.io/kubernetes-security/">Kubernetes Security</a>

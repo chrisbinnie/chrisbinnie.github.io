@@ -128,7 +128,7 @@ footer a {
 
 <div class="container">
 
-# Chris Binnie - Security Notes
+<H2>Chris Binnie - Security Notes</H2>
 
 <ul class="notes">
 <li class="note-item">

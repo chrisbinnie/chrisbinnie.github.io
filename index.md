@@ -71,7 +71,7 @@ canonical: "https://chrisbinnie.github.io/"
 <style>
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto;
     padding: 40px 20px;
     background-color: #f8f9fa;
@@ -79,7 +79,7 @@ body {
 }
 .container {
     background: white;
-    padding: 40px;
+    padding: 30px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
@@ -87,6 +87,7 @@ h1 {
     color: #2c3e50;
     margin-bottom: 30px;
     text-align: center;
+    font-size: 1.8em;
 }
 .notes {
     list-style: none;
@@ -126,6 +127,8 @@ footer a {
 </style>
 
 <div class="container">
+
+# Chris Binnie - Security Notes
 
 <ul class="notes">
 <li class="note-item">

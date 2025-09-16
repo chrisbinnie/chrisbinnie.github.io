@@ -81,7 +81,7 @@ body {
     background: white;
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px      rgba(0,0,0,0.1);
 }
 h1 {
     color: #2c3e50;
@@ -127,8 +127,6 @@ footer a {
 </style>
 
 <div class="container">
-
-<H2>Chris Binnie - Security Notes</H2>
 
 <ul class="notes">
 <li class="note-item">

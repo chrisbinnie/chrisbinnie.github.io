@@ -71,7 +71,7 @@ canonical: "https://chrisbinnie.github.io/"
 <style>
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    max-width: 600px;
+    max-width: 1080px;
     margin: 0 auto;
     padding: 40px 20px;
     background-color: #f8f9fa;

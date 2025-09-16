@@ -1,12 +1,16 @@
----
-layout: default
-title: "Chris Binnie - Security Notes"
-description: "Comprehensive security guides covering Kubernetes, AWS Cloud, and Linux Server security best practices by author Chris Binnie."
-keywords: "kubernetes security, aws cloud security, linux server security, cybersecurity, devops security"
-author: "Chris Binnie"
-canonical: "https://chrisbinnie.github.io/"
----
+<!DOCTYPE html>
 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chris Binnie - Security Notes</title>
+    <meta name="description" content="Comprehensive security guides covering Kubernetes, AWS Cloud, and Linux Server security best practices by author Chris Binnie.">
+    <meta name="keywords" content="kubernetes security, aws cloud security, linux server security, cybersecurity, devops security">
+    <meta name="author" content="Chris Binnie">
+    <link rel="canonical" href="https://chrisbinnie.github.io/">
+
+```
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -69,85 +73,210 @@ canonical: "https://chrisbinnie.github.io/"
 </script>
 
 <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    max-width: 1080px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    background-color: #f8f9fa;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
     color: #333;
+    line-height: 1.6;
 }
+
+.main-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
 .container {
-    background: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    align: left;
+    width: 100%;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    padding: 40px;
+    margin: auto;
 }
+
 h1 {
     color: #2c3e50;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     text-align: center;
-    font-size: 1.8em;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
+
 .notes {
     list-style: none;
     padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
 }
+
 .note-item {
-    margin: 20px 0;
-    padding: 20px;
-    background: #f8f9fa;
-    border-radius: 6px;
-    border-left: 4px solid #007acc;
+    padding: 30px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
 }
+
+.note-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: left;
+}
+
+.note-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.note-item:hover::before {
+    transform: scaleX(1);
+}
+
 .note-item a {
-    color: #007acc;
+    color: #2c3e50;
     text-decoration: none;
-    font-size: 1.2em;
-    font-weight: 500;
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 12px;
+    transition: color 0.3s ease;
 }
-.note-item a:hover {
-    text-decoration: underline;
+
+.note-item:hover a {
+    color: #667eea;
 }
+
 .description {
     color: #666;
-    margin-top: 8px;
-    font-size: 0.95em;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    line-height: 1.5;
 }
+
 footer {
     text-align: center;
-    margin-top: 40px;
+    margin-top: 20px;
     color: #666;
-    font-size: 0.9em;
+    font-size: clamp(0.85rem, 2vw, 0.95rem);
+    padding-top: 30px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
+
 footer a {
-    color: #666;
+    color: #667eea;
     text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #764ba2;
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+    .container {
+        padding: 25px;
+        margin: 10px;
+        border-radius: 15px;
+    }
+    
+    .notes {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .note-item {
+        padding: 25px;
+    }
+    
+    h1 {
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-container {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 20px;
+        margin: 5px;
+    }
+    
+    .note-item {
+        padding: 20px;
+    }
+}
+
+/* Ultra-wide screen optimization */
+@media (min-width: 1400px) {
+    .notes {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 </style>
+```
 
-<div class="container">
+</head>
+<body>
+    <div class="main-container">
+        <div class="container">
+            <h1>Chris Binnie - Security Notes</h1>
 
-<ul class="notes">
-<li class="note-item">
-<a href="https://chrisbinnie.github.io/kubernetes-security/">Kubernetes Security</a>
-<div class="description">Comprehensive guide to securing Kubernetes clusters and workloads</div>
-</li>
+```
+        <ul class="notes">
+            <li class="note-item">
+                <a href="https://chrisbinnie.github.io/kubernetes-security/">Kubernetes Security</a>
+                <div class="description">Comprehensive guide to securing Kubernetes clusters and workloads</div>
+            </li>
 
-<li class="note-item">
-<a href="https://chrisbinnie.github.io/aws-cloud-security/">AWS Cloud Security</a>
-<div class="description">Best practices for securing your AWS cloud infrastructure</div>
-</li>
+            <li class="note-item">
+                <a href="https://chrisbinnie.github.io/aws-cloud-security/">AWS Cloud Security</a>
+                <div class="description">Best practices for securing your AWS cloud infrastructure</div>
+            </li>
 
-<li class="note-item">
-<a href="https://chrisbinnie.github.io/linux-server-security/">Linux Server Security</a>
-<div class="description">Essential security configurations for Linux servers</div>
-</li>
-</ul>
+            <li class="note-item">
+                <a href="https://chrisbinnie.github.io/linux-server-security/">Linux Server Security</a>
+                <div class="description">Essential security configurations for Linux servers</div>
+            </li>
+        </ul>
 
-<footer>
-<p><a href="https://www.chrisbinnie.co.uk/">© 2025 Chris Binnie</a></p>
-</footer>
-
+        <footer>
+            <p><a href="https://www.chrisbinnie.co.uk/">© 2025 Chris Binnie</a></p>
+        </footer>
+    </div>
 </div>
+```
+
+</body>
+</html>
